@@ -1,0 +1,573 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(203, 203, 203);
+    padding: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #b3e5fc;
+}
+.arrow-container {
+  position: relative;
+}
+
+.arrow-bottom {
+  cursor: pointer;
+  background-color: #b3e5fc;
+  border: none;
+}
+
+#menuContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+#menuContent ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menuContent ul li {
+  padding: 8px 12px;
+  display: flex; /* Sử dụng flexbox để căn chỉnh hình ảnh và văn bản theo hàng ngang */
+  align-items: center;
+}
+
+#menuContent ul li img {
+  margin-right: 8px; /* Khoảng cách giữa ảnh và văn bản */
+  width: 24px; /* Điều chỉnh kích thước ảnh */
+  height: 24px;
+}
+
+#menuContent ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+#menuContent ul li a:hover {
+  background-color: #f0f0f0;
+}
+header div a img{
+  height: auto;
+}
+.logo-search {
+  display: flex;
+  margin-left: 5%;
+  gap: 13%;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+.search-box button {
+  background-color: #42a5f5;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.notification {
+  position: relative;
+  margin-right: 10px;
+}
+
+.notification .fa-envelope {
+  font-size: 20px;
+  color: #000;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.username {
+  margin-right: 10px;
+  color: #000;
+}
+
+.role {
+  color: #1e88e5;
+}
+.insert-file{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin-left: 56%;
+  gap: 15px;
+
+}
+.button-upload{
+  background-color: white;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* 400 là Regular */
+  height: 40px;
+  color: rgb(97, 141, 211);
+  cursor: pointer;
+}
+.button-file{
+  background-color: #0095FF;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* 400 là Regular */
+  height: 40px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.button-video{
+  background-color: #0095FF;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* 400 là Regular */
+  width: max-content;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+nav div button .fa-upload{
+  padding-right: 10px;
+  color: black;
+  font-size: 16px;
+}
+nav div button .fa-file-arrow-up{
+  padding-right: 10px;
+  font-size: 16px;
+  color: #000;
+}
+nav div button .fa-file-video{
+  padding-right: 10px;
+  font-size: 16px;
+  color: #000;
+}
+.inner-wrap .subject{
+    display: flex;
+    padding: 20px 0px;
+    justify-content: space-between;
+}
+.inner-wrap .subject .subject-select{
+    width: 30%;
+    padding-top: 10px;
+    height: max-content;
+    background-color: white;
+}
+.inner-wrap .subject .subject-select ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.inner-wrap .subject .main-subject{
+  width: 65%;
+  height: 700px;
+  background-color: white;
+}
+.inner-wrap .subject .subject-select .book-select{
+  display: flex;
+  gap: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+.inner-wrap .subject .subject-select .book-select img{
+  width: 64px;
+  height: 64px;
+}
+.inner-wrap .subject .subject-select .book-select2{
+  display: flex;
+  gap: 40px;
+  cursor: pointer;
+  padding: 10px 10px;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+.inner-wrap .subject .subject-select .book-select2 img{
+  width: 64px;
+  height: 64px;
+}
+.inner-wrap .subject .subject-select .book-select3{
+  display: flex;
+  gap: 40px;
+  cursor: pointer;
+  padding: 10px 10px;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+.inner-wrap .subject .subject-select .book-select3 img{
+  width: 64px;
+  
+  height: 64px;
+}
+.inner-wrap .subject .subject-select .book-select4{
+  display: flex;
+  gap: 40px;
+  padding: 10px 10px;
+  cursor: pointer;
+  justify-content: center;
+}
+.inner-wrap .subject .subject-select .book-select4 img{
+  width: 64px;
+  height: 64px;
+}
+
+.accordion {
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.fa-list-ul {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+header-left h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.fa-bounce {
+  color: #63E6BE;
+  font-size: 18px;
+}
+
+.add-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.complete {
+  color: green;
+  font-size: 18px;
+}
+
+.lesson-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.lesson-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  position: relative;
+}
+.completed{
+  position: relative;
+}
+
+.lesson-list li:last-child {
+  border-bottom: none;
+}
+
+.lesson-content {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.file-icon {
+  border-radius: 3px;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+
+.link-icon {
+  background-color: #5a9;
+  border-radius: 50%;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+.status {
+  font-size: 14px;
+}
+
+.status.complete {
+  color: green;
+}
+
+.status.not-available {
+  color: gray;
+}
+
+.options-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.expanded {
+  height: max-content; /* Chiều cao danh sách mở ra tương ứng với 4 bài học */
+}
+.accordion1 {
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid;
+}
+
+.accordion-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.header-left1 {
+  display: flex;
+  align-items: center;
+}
+
+.fa-list-ul {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+header-left h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-right1 {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.fa-bounce {
+  color: #63E6BE;
+  font-size: 18px;
+}
+
+.add-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.complete1 {
+  color: green;
+  font-size: 18px;
+}
+
+.lesson-list1{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.lesson-list1 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.lesson-list1 li:last-child {
+  border-bottom: none;
+}
+
+.lesson-content1 {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.file-icon {
+  border-radius: 3px;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+
+.link-icon {
+  background-color: #5a9;
+  border-radius: 50%;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+.status {
+  font-size: 14px;
+}
+
+.status.complete {
+  color: green;
+}
+
+.status.not-available {
+  color: gray;
+}
+
+.options-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.expanded {
+  height: max-content; /* Chiều cao danh sách mở ra tương ứng với 4 bài học */
+}
+
+.content-section {
+  display: none; /* Ẩn tất cả nội dung */
+}
+
+.content-section.active {
+  display: block; /* Chỉ hiển thị phần nội dung có class "active" */
+}
+
+
+.options {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Hiển thị ngay dưới dấu ba chấm */
+  right: 0; /* Đặt ở cạnh phải */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  z-index: 10;
+  width: 80px; /* Đặt chiều rộng cố định cho menu */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ cho menu */
+}
+
+/* Cài đặt cho các nút sửa và xóa */
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
