@@ -1,12 +1,4 @@
-// Toggle Password Change Box visibility
-document.getElementById('changePasswordCheckbox').addEventListener('change', function () {
-    var passwordBox = document.getElementById('passwordBox');
-    if (this.checked) {
-        passwordBox.style.display = 'block';
-    } else {
-        passwordBox.style.display = 'none';
-    }
-});
+
 
  // Password Change Confirmation Logic
  document.getElementById("confirmPasswordChange").onclick = function() {
@@ -82,6 +74,30 @@ function saveEdit(field) {
         cancelEdit(field);  // Reset after saving
     } else {
         alert("Vui lòng nhập thông tin mới!");
+    }
+}
+
+
+ // Password Change Confirmation Logic
+ document.getElementById("confirmPasswordChange").onclick = function() {
+    var oldPassword = document.getElementById("oldPassword").value;
+    var newPassword = document.getElementById("newPassword").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!oldPassword || !newPassword || !confirmPassword) {
+        alert("Vui lòng điền đầy đủ thông tin!");
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        alert("Mật khẩu mới không khớp!");
+        return;
+    }
+
+    var confirmation = confirm("Bạn có chắc chắn muốn đổi mật khẩu không?");
+    if (confirmation) {
+        alert("Mật khẩu đã được đổi thành công!");
+        // Here, you would normally process the password change server-side
     }
 }
 
