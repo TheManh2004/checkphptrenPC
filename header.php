@@ -34,7 +34,7 @@
                 <button id="toggleMenuBtn" class="arrow-bottom">▼</button>
                 <div id="menuContent" class="hidden">
                     <ul>
-                        <li><img src="./image/account.png" alt="Tài khoản" /><a href="#">Tài khoản</a></li>
+                        <li id="accountBtn"><img src="./image/account.png" alt="Tài khoản" /><a href="./account/account.php">Tài Khoản</a></li>
                         <li><img src="./image/khoahoc.png" alt="Khóa học" /><a href="#">Khóa học</a></li>
                         <li><img src="./image/calendar.png" alt="Lịch" /><a href="#">Lịch</a></li>
                         <li><img src="./image/hopthu.png" alt="Hộp thư" /><a href="#">Hộp thư</a></li>

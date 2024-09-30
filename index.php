@@ -95,9 +95,15 @@ include 'header.php';
                                     <span>Bài 1</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-check complete"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                             <li>
                                 <div class="lesson-content">
@@ -105,9 +111,15 @@ include 'header.php';
                                     <span>Bài 2</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-check complete"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                             <li>
                                 <div class="lesson-content">
@@ -115,9 +127,15 @@ include 'header.php';
                                     <span>Bài giảng demo</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-ban not-available"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                         </ul>
                     </div>
@@ -142,9 +160,15 @@ include 'header.php';
                                     <span>HTML&CSS semi</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-check complete"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                             <li class="completed1">
                                 <div class="lesson-content1">
@@ -152,9 +176,15 @@ include 'header.php';
                                     <span>Bài 1</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-check complete"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                             <li>
                                 <div class="lesson-content1">
@@ -162,9 +192,15 @@ include 'header.php';
                                     <span>Bài 2</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-check complete"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                             <li>
                                 <div class="lesson-content1">
@@ -172,9 +208,15 @@ include 'header.php';
                                     <span>Bài Test</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-ban not-available"></i>
-                                    <button class="options-button"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
+                                        <div class="options">
+                                            <i class="fas fa-check complete"></i>
+                                            <button class="options-button" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="menu">
+                                                <button onclick="editLesson(this)">Sửa</button>
+                                                <button onclick="deleteLesson(this)">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </li>
                         </ul>
                     </div>
