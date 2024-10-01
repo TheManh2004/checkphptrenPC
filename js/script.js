@@ -18,6 +18,74 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+function openModal(type) {
+  if (type === 'video') {
+    document.getElementById('video-modal').style.display = 'block';
+  } else if (type === 'file') {
+    document.getElementById('file-modal').style.display = 'block';
+  }
+}
+
+function closeModal(type) {
+  if (type === 'video') {
+    document.getElementById('video-modal').style.display = 'none';
+  } else if (type === 'file') {
+    document.getElementById('file-modal').style.display = 'none';
+  }
+}
+
+// Thay đổi giữa URL và file upload
+function toggleInput(type) {
+  if (type === 'video') {
+    var videoType = document.getElementById('video-type').value;
+    if (videoType === 'url') {
+      document.getElementById('video-url-inputs').style.display = 'block';
+      document.getElementById('video-upload-input').style.display = 'none';
+      document.getElementById('video-instruction-text').style.display = 'block';
+    } else if (videoType === 'file') {
+      document.getElementById('video-url-inputs').style.display = 'none';
+      document.getElementById('video-upload-input').style.display = 'block';
+      document.getElementById('video-instruction-text').style.display = 'none';
+    }
+  } else if (type === 'file') {
+    var fileType = document.getElementById('file-type').value;
+    if (fileType === 'url') {
+      document.getElementById('file-url-inputs').style.display = 'block';
+      document.getElementById('file-upload-input').style.display = 'none';
+      document.getElementById('file-instruction-text').style.display = 'block';
+    } else if (fileType === 'file') {
+      document.getElementById('file-url-inputs').style.display = 'none';
+      document.getElementById('file-upload-input').style.display = 'block';
+      document.getElementById('file-instruction-text').style.display = 'none';
+    }
+  }
+}
+
+function uploadFile(type) {
+  if (type === 'video') {
+    var videoType = document.getElementById('video-type').value;
+    if (videoType === 'url') {
+      var videoUrl = document.getElementById('video-url').value;
+      var videoPageName = document.getElementById('video-page-name').value;
+      alert('Video URL: ' + videoUrl + '\nTên trang: ' + videoPageName);
+    } else if (videoType === 'file') {
+      var videoUpload = document.getElementById('video-upload').files[0];
+      alert('Video upload: ' + videoUpload.name);
+    }
+    closeModal('video');
+  } else if (type === 'file') {
+    var fileType = document.getElementById('file-type').value;
+    if (fileType === 'url') {
+      var fileUrl = document.getElementById('file-url').value;
+      var filePageName = document.getElementById('file-page-name').value;
+      alert('File URL: ' + fileUrl + '\nTên trang: ' + filePageName);
+    } else if (fileType === 'file') {
+      var fileUpload = document.getElementById('file-upload').files[0];
+      alert('File upload: ' + fileUpload.name);
+    }
+    closeModal('file');
+  }
+}
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton1 = document.getElementById("toggle-button1");
   const lessonList1 = document.getElementById("lesson-list1");
@@ -84,7 +152,7 @@ bookSelect4.addEventListener('click', function () {
 const toggleMenuBtn = document.getElementById('toggleMenuBtn');
 const menuContent = document.getElementById('menuContent');
 // Hàm toggle hiển thị/ẩn menu
-toggleMenuBtn.addEventListener('click', function(event) {
+toggleMenuBtn.addEventListener('click', function (event) {
   event.stopPropagation(); // Ngăn việc đóng menu khi nhấp vào nút
   if (menuContent.style.display === "none" || menuContent.style.display === "") {
     menuContent.style.display = "block"; // Hiển thị menu
@@ -94,7 +162,7 @@ toggleMenuBtn.addEventListener('click', function(event) {
 });
 
 // Đóng menu khi nhấp ra ngoài menu
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   if (!toggleMenuBtn.contains(event.target) && !menuContent.contains(event.target)) {
     menuContent.style.display = "none"; // Ẩn menu khi click ngoài
   }
@@ -104,27 +172,27 @@ function toggleMenu(button) {
   var menu = button.nextElementSibling;
 
   // Đóng các menu khác trước
-  document.querySelectorAll('.menu').forEach(function(otherMenu) {
-      if (otherMenu !== menu) {
-          otherMenu.style.display = 'none';
-      }
+  document.querySelectorAll('.menu').forEach(function (otherMenu) {
+    if (otherMenu !== menu) {
+      otherMenu.style.display = 'none';
+    }
   });
 
   // Đóng/mở menu hiện tại
   if (menu.style.display === 'flex') {
-      menu.style.display = 'none';
+    menu.style.display = 'none';
   } else {
-      menu.style.display = 'flex';
+    menu.style.display = 'flex';
   }
 }
 
 // Đóng menu khi click ra ngoài
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   var isClickInsideMenu = event.target.closest('.options');
   if (!isClickInsideMenu) {
-      document.querySelectorAll('.menu').forEach(function(menu) {
-          menu.style.display = 'none';
-      });
+    document.querySelectorAll('.menu').forEach(function (menu) {
+      menu.style.display = 'none';
+    });
   }
 });
 // Xóa bài học với xác nhận
