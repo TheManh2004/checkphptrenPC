@@ -1,27 +1,12 @@
-
-
- // Password Change Confirmation Logic
- document.getElementById("confirmPasswordChange").onclick = function() {
-    var oldPassword = document.getElementById("oldPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (!oldPassword || !newPassword || !confirmPassword) {
-        alert("Vui lòng điền đầy đủ thông tin!");
-        return;
-    }
-
-    if (newPassword !== confirmPassword) {
-        alert("Mật khẩu mới không khớp!");
-        return;
-    }
-
+// Password Change Confirmation Logic
+document.getElementById("confirmPasswordChange").onclick = function() {
     var confirmation = confirm("Bạn có chắc chắn muốn đổi mật khẩu không?");
     if (confirmation) {
-        alert("Mật khẩu đã được đổi thành công!");
-        // Here, you would normally process the password change server-side
+        // Let the form be submitted to PHP for handling password change
+        document.querySelector('#passwordChange form').submit();
     }
-}
+};
+
 // Function to handle inline edits
 function toggleEdit(field) {
     var displayElement = document.getElementById(field + "Display");
@@ -54,60 +39,25 @@ function cancelEdit(field) {
 }
 
 // Function to save the edit
-function saveEdit(field) {
-    var displayElement = document.getElementById(field + "Display");
-    var inputElement = document.getElementById(field + "Input");
-    var saveButton = document.getElementById("save" + capitalizeFirstLetter(field) + "Btn");
-
-    var newValue = inputElement.value;
-    if (newValue.trim() !== "") {
-        if (field === "phone") {
-            displayElement.textContent = "Thông tin liên hệ: Nguyễn Thế Mạnh, " + newValue;
-        } else if (field === "gmail") {
-            displayElement.textContent = "Gmail: " + newValue;
-        } else if (field === "gender") {
-            displayElement.textContent = "Giới tính: " + newValue;
-        } else if (field === "role") {
-            displayElement.textContent = "Vai trò: " + newValue;
+document.querySelectorAll('.save-btn').forEach(function(button) {
+    button.onclick = function() {
+        var field = this.id.replace('save', '').replace('Btn', '').toLowerCase();
+        var confirmation = confirm("Bạn có chắc chắn muốn lưu thay đổi không?");
+        if (confirmation) {
+            // Submit the form to the server-side PHP for handling the edit
+            this.form.submit();
         }
-
-        cancelEdit(field);  // Reset after saving
-    } else {
-        alert("Vui lòng nhập thông tin mới!");
     }
-}
+});
 
-
- // Password Change Confirmation Logic
- document.getElementById("confirmPasswordChange").onclick = function() {
-    var oldPassword = document.getElementById("oldPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (!oldPassword || !newPassword || !confirmPassword) {
-        alert("Vui lòng điền đầy đủ thông tin!");
-        return;
-    }
-
-    if (newPassword !== confirmPassword) {
-        alert("Mật khẩu mới không khớp!");
-        return;
-    }
-
-    var confirmation = confirm("Bạn có chắc chắn muốn đổi mật khẩu không?");
-    if (confirmation) {
-        alert("Mật khẩu đã được đổi thành công!");
-        // Here, you would normally process the password change server-side
-    }
-}
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
 // Logout Button Functionality
 document.getElementById("logoutBtn").onclick = function () {
     var confirmation = confirm("Bạn có chắc chắn muốn đăng xuất không?");
     if (confirmation) {
-        window.location.href = "./login.php";  // Replace with actual logout functionality
+        document.querySelector('#logoutForm').submit();  // Submit logout form to PHP
     }
 };
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

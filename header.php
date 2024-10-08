@@ -21,9 +21,20 @@
             </div>
         </div>
         <div class="user-info">
-            <div class="notification">
+            <div class="clicknotification">
+            <div class="notification" id="notification">
                 <i class="fa fa-envelope"></i>
                 <span class="badge">1</span>
+            </div>
+            <div class="question-list" id="questionList">
+                <ul>
+                    <li>
+                        <div class="question-title">Học viên hỏi:</div>
+                        <div class="question-content">Sao đéo làm được bài</div>
+                        <div class="question-time">Hỏi lúc: 12:00 PM</div>
+                    </li>
+                </ul>
+            </div>
             </div>
             <span class="username">Nguyễn Thế Mạnh</span>
             <span style="color: white; 
@@ -35,8 +46,7 @@
                 <div id="menuContent" class="hidden">
                     <ul>
                         <li id="accountBtn"><img src="./image/account.png" alt="Tài khoản" /><a href="./account/account.php">Tài Khoản</a></li>
-                        <li><img src="./image/khoahoc.png" alt="Khóa học" /><a href="#">Khóa học</a></li>
-                        <li><img src="./image/calendar.png" alt="Lịch" /><a href="#">Lịch</a></li>
+                        <li><img src="./image/khoahoc.png" alt="Khóa học" /><a href="index.php">Khóa học</a></li>
                         <li><img src="./image/hopthu.png" alt="Hộp thư" /><a href="#">Hộp thư</a></li>
                         <li><img src="./image/help.png" alt="Trợ giúp" /><a href="#">Trợ giúp</a></li>
                     </ul>

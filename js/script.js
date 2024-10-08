@@ -1,3 +1,36 @@
+  // Khi nhấn vào notification, hiển thị/ẩn danh sách câu hỏi
+  document.getElementById('notification').addEventListener('click', function () {
+    var questionList = document.getElementById('questionList');
+    if (questionList.style.display === 'block') {
+        questionList.style.display = 'none';
+    } else {
+        questionList.style.display = 'block';
+    }
+});
+
+// Hàm để lấy danh sách câu hỏi từ server (bạn cần kết nối với PHP ở đây)
+function loadQuestions() {
+  fetch('getQuestions.php')
+    .then(response => response.json())
+    .then(data => {
+      var questionList = document.querySelector('.question-list ul');
+      questionList.innerHTML = ''; // Xóa nội dung cũ
+
+      data.forEach(question => {
+        var li = document.createElement('li');
+        li.innerHTML = `
+              <div class="question-title">${question.student_name} hỏi:</div>
+              <div class="question-content">${question.question}</div>
+              <div class="question-time">Hỏi lúc: ${question.created_at}</div>
+          `;
+        questionList.appendChild(li);
+      });
+    });
+}
+
+// Gọi hàm loadQuestions khi trang được tải
+document.addEventListener('DOMContentLoaded', loadQuestions);
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("toggle-button");
   const lessonList = document.getElementById("lesson-list");
